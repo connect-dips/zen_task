@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zen Sunset</title>
+
+    <style type="text/css">
+
+        html { background-color: #9be3fe; }
+        body { margin:0; text-align: center }
+        .gradient { content: ""; height: 100%; width: 100%; position: fixed; z-index: -6; }
+        .gradient.one { background-image: linear-gradient(to bottom, #9be3fe 0%, #ffffff 100%);}
+        .gradient.two { background-image: linear-gradient(to bottom, #29c5ff 0%, #e22b0b 100%); display:none; }
+
+        .sun{
+            position: fixed;
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            bottom: 0px;
+            border-radius: 50%;
+            background: #ffffff;
+        }
+
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+
+<div class="gradient one"></div>
+<div class="gradient two"></div>
+<div class="sun"></div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('.gradient').height($(window).height());
+        $('.sun').css({'bottom': $(window).height()-100})
+
+        fadeToggle( $('.gradient.one') );
+        fadeToggle( $('.gradient.two') );
+        timerloop();
+    })
+
+    function timerloop() {
+        let pos = $(window).height()-100;
+        let timer = setInterval(function () {
+            pos = pos - 1;
+            console.log(pos);
+            $('.sun').css({'bottom': pos})
+            if(pos === -100){
+                clearInterval(timer);
+                //fadeToggle( $('.gradient.one') );
+                fadeToggle( $('.gradient.two') );
+                timerloop();
+            }
+        }, 10);
+    }
+
+    function fadeToggle(el, hide) {
+        let pos2 = $(window).height()-100;
+        el.fadeToggle(pos2*10,null,function() {
+            //fadeToggle(el);
+            //timerloop();
+        });
+    }
+
+
+
+</script>
+
+</body>
+</html>

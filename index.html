@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zen Sunset</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style type="text/css">
+
+        html { background-color: #9be3fe; }
+        body { margin:0; text-align: center }
+        .ui-widget.ui-widget-content{
+            border: 0px solid transparent;
+        }
+        .ui-widget-content,
+        .ui-widget-header{
+            background: transparent;
+        }
+
+        .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+            border: 0px solid transparent;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #ffffff;
+            outline: none;
+        }
+        .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover{
+            background: #ffffff;
+        }
+        .gradient { content: ""; height: 100%; width: 100%; position: fixed; z-index: -6; }
+        .gradient.one { background-image: linear-gradient(to bottom, #9be3fe 0%, #ffffff 100%);}
+        .gradient.two { background-image: linear-gradient(to bottom, #29c5ff 0%, #e22b0b 100%);}
+        #slider-vertical{
+            margin: 0 auto;
+        }
+
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="jquery.ui.touch-punch.min.js"></script>
+</head>
+<body>
+
+
+<div class="gradient two"></div>
+<div class="gradient one"></div>
+<div id="slider-vertical"></div>
+
+<script>
+    $( function() {
+
+        $('#slider-vertical').height($(window).height()-10);
+
+        $( "#slider-vertical" ).slider({
+            orientation: "vertical",
+            range: "min",
+            min: 0,
+            max: 100,
+            value: 90,
+            slide: function( event, ui ) {
+                let intensity = ui.value;
+                console.log(intensity);
+                $('.gradient.one').css({'opacity': intensity/100})
+
+            }
+        });
+    } );
+</script>
+
+</body>
+</html>
