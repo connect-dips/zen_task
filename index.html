@@ -55,6 +55,7 @@
             orientation: "vertical",
             range: "min",
             min: 0,
+            step:1,
             max: 100,
             value: 100,
             slide: function( event, ui ) {
@@ -70,16 +71,21 @@
 
     let timer = null;
 
-    $( "#slider-vertical" ).on( "slide", function( event, ui ) {
+    $("#slider-vertical" ).on( "slide", function( event, ui ) {
         clearInterval(timer);
         timer = null;
         let intensity = ui.value;
         console.log(intensity);
         $('.gradient.one').css({'opacity': intensity/100})
-    } );
+    });
+    $("#slider-vertical" ).on( "slidestop", function( event, ui ) {
+        clearInterval(timer);
+        timer = null;
+        timerloop(ui.value)
+    });
 
-    function timerloop() {
-        let pos = 100;
+    function timerloop(point) {
+        let pos = (point)?point:100;
         timer = setInterval(function () {
             pos = pos - 1;
             console.log(pos);
