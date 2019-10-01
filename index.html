@@ -10,16 +10,27 @@
         body { margin:0; text-align: center }
 
         .gradient { content: ""; height: 100%; width: 100%; position: fixed; z-index: -6; }
-        .gradient.one { background-image: linear-gradient(to bottom, #9be3fe 0%, #ffffff 100%);}
-        .gradient.two { background-image: linear-gradient(to bottom, #29c5ff 0%, #e2630f 100%); opacity: 0;}
-        #sun{
+        .gradient.one { background-image: linear-gradient(to bottom, #afc0cd 0%, #c7acac 100%);}
+        .gradient.two { background-image: linear-gradient(to bottom, #8aa4b3 0%, #b38580 100%); opacity: 0;}
+        .gradient.three { background-image: linear-gradient(to bottom, #607685 0%, #856061 100%); opacity: 0;}
+        .gradient.four { background-image: linear-gradient(to bottom, #425364 0%, #57413c 100%); opacity: 0;}
+        .gradient.five { background-image: linear-gradient(to bottom, #273f5a 0%, #452d29 100%); opacity: 0;}
+        .sun{
             border: 0px solid transparent;
             margin: 0 auto;
             width: 100px;
             height: 100px;
-            border-radius: 50%;
-            background: #ffffff;
             outline: none;
+            position: relative;
+            display: inline-block;
+        }
+        .sun .one{
+            position: absolute; content: ""; height: 100%; width: 100%; background-image: linear-gradient(to bottom, #fbf9f9 0%, #cccdce 100%);
+            border-radius: 50%;
+        }
+        .sun .two{
+            position: absolute; content: ""; height: 100%; width: 100%; background-image: linear-gradient(to bottom, #f6f5f3 0%, #745750 100%);
+            border-radius: 50%; opacity: 0;
         }
 
     </style>
@@ -31,23 +42,31 @@
 
 <div class="gradient one"></div>
 <div class="gradient two"></div>
-<div id="sun"></div>
+<div class="gradient three"></div>
+<div class="gradient four"></div>
+<div class="gradient five"></div>
+<div class="sun">
+    <div class="one"></div>
+    <div class="two"></div>
+</div>
 
 <script>
     $( function() {
-        $( "#sun" ).draggable({
+        $( ".sun" ).draggable({
             drag: function( event, ui ) {
                 let windowH = $(window).height();
                 let intensity = parseInt((ui.position.top/windowH)*100);
                 console.log(intensity);
-                $('.gradient.two').css({'opacity': intensity/100})
+                $('.sun .two').css({'opacity': intensity/100})
+                $('.gradient.five').css({'opacity': intensity/100})
             },
             start: function( event, ui ) {
                 clearInterval(timer);
                 timer = null;
                 let windowH = $(window).height();
                 let intensity = parseInt((ui.position.top/windowH)*100);
-                $('.gradient.two').css({'opacity': intensity/100})
+                $('.sun .two').css({'opacity': intensity/100})
+                $('.gradient.five').css({'opacity': intensity/100})
             },
             stop: function( event, ui ) {
                 clearInterval(timer);
@@ -65,11 +84,14 @@
     function timerloop(point) {
         let pos = (point)?point:0;
         timer = setInterval(function () {
-            $('#sun').css({'top': pos})
+            $('.sun').css({'top': pos})
             let windowH = $(window).height();
             let intensity = parseInt((pos/windowH)*100) + 10;
             console.log(intensity/100)
-            $('.gradient.two').css({'opacity': intensity/100})
+
+            $('.sun .two').css({'opacity': intensity/100})
+
+            $('.gradient.five').css({'opacity': intensity/100})
             pos = pos + 1;
             if(pos >= $(window).height()-100){
                 clearInterval(timer);
