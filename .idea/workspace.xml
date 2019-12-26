@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="424c298b-1469-45d0-96ad-a7bc9f4363b1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/home1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home11.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home9.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home1.html" beforeDir="false" afterPath="$PROJECT_DIR$/home1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home2.html" beforeDir="false" afterPath="$PROJECT_DIR$/home2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home3.html" beforeDir="false" afterPath="$PROJECT_DIR$/home3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home4.html" beforeDir="false" afterPath="$PROJECT_DIR$/home4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home5.html" beforeDir="false" afterPath="$PROJECT_DIR$/home5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home6.html" beforeDir="false" afterPath="$PROJECT_DIR$/home6.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +44,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.home2.html">
+  <component name="RunManager" selected="JavaScript Debug.home7.html">
     <configuration name="home2.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/zen_task/home2.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="home7.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/zen_task/home7.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/zen_task/index.html" useBuiltInWebServerPort="true">
@@ -47,6 +56,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.home7.html" />
         <item itemvalue="JavaScript Debug.home2.html" />
         <item itemvalue="JavaScript Debug.index.html" />
       </list>
@@ -78,7 +88,7 @@
       <workItem from="1569487302470" duration="599000" />
       <workItem from="1569688728654" duration="2527000" />
       <workItem from="1569920497327" duration="3442000" />
-      <workItem from="1577249449511" duration="3104000" />
+      <workItem from="1577249449511" duration="5613000" />
     </task>
     <servers />
   </component>
