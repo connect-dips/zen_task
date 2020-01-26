@@ -9,6 +9,46 @@
 
         html { background-color: #9be3fe; }
         body { margin:0; text-align: center }
+        .reload-control{
+            display: inline-block;
+            position: absolute;
+            z-index: 99999;
+            width: 80px;
+            height: 80px;
+            left: 0;
+        }
+        .speed-control{
+            display: inline-block;
+            height: auto;
+            position: absolute;
+            z-index: 99999;
+            right: 0;
+        }
+        .speed-control .increase,
+        .speed-control .reduce{
+            display: inline-block;
+            width: 80px;
+            float: left;
+            height: 80px;
+            position: relative;
+            background: #f6f5f3;
+            top: 0;
+        }
+        .speed-control .reduce{
+            margin-left: 10px;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 768px) and (orientation: landscape) {
+            html {
+                transform: rotate(-90deg);
+                transform-origin: left top;
+                width: 100vh;
+                overflow-x: hidden;
+                position: absolute;
+                top: 100%;
+                left: 0;
+            }
+        }
 
         .gradient { content: ""; height: 100%; width: 100%; position: fixed; z-index: -6; }
         .gradient.one { background-image: linear-gradient(to bottom, #afc0cd 0%, #c7acac 100%);}
@@ -34,17 +74,6 @@
             border-radius: 50%; opacity: 0;
         }
 
-        @media screen and (min-width: 1024px) and (max-width: 768px) and (orientation: landscape) {
-            html {
-                transform: rotate(-90deg);
-                transform-origin: left top;
-                width: 100vh;
-                overflow-x: hidden;
-                position: absolute;
-                top: 100%;
-                left: 0;
-            }
-        }
 
     </style>
     <script type="text/javascript" src="jquery.js"></script>
@@ -52,7 +81,11 @@
     <script type="text/javascript" src="jquery.ui.touch-punch.min.js"></script>
 </head>
 <body>
-
+<div class="reload-control"></div>
+<div class="speed-control">
+    <div class="reduce">&nbsp</div>
+    <div class="increase">&nbsp</div>
+</div>
 <div class="gradient one"></div>
 <div class="gradient two"></div>
 <div class="gradient three"></div>
@@ -64,8 +97,27 @@
 </div>
 
 <script>
+
+    let timeout = 100;
+    let step = 1;
     $( function() {
+
+        $('.reload-control').on('click', function () {
+            location.reload();
+        })
+        $('.increase').on('click', function () {
+            step++;
+        })
+        $('.reduce').on('click', function () {
+            console.log(step)
+            if(step > 1){
+                step--;
+            }
+        })
+
+        $('.speed-control').css({'height':$(window).height()})
         $( ".sun" ).draggable({
+            containment: "document",
             drag: function( event, ui ) {
                 let windowH = $(window).height();
                 let intensity = parseInt((ui.position.top/windowH)*100);
@@ -91,6 +143,7 @@
 
     } );
     let timer = null;
+
     function timerloop(point) {
         let pos = (point)?point:0;
         timer = setInterval(function () {
@@ -99,13 +152,14 @@
             let intensity = parseInt((pos/windowH)*100) + 10;
             $('.sun .two').css({'opacity': intensity/100})
             $('.gradient.five').css({'opacity': intensity/100})
-            pos = pos + 1;
+            pos = pos + step;
+
             if(pos >= $(window).height()-100){
                 clearInterval(timer);
                 timer = null;
                 timerloop()
             }
-        }, 10);
+        }, timeout);
     }
 
 </script>
