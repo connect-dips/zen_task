@@ -3,11 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Zen Sunset</title>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="jquery-ui.css">
     <style type="text/css">
 
         html { background-color: #9be3fe; }
         body { margin:0; text-align: center }
+        .reload-control{
+            display: inline-block;
+            position: absolute;
+            z-index: 99999;
+            width: 80px;
+            height: 80px;
+            left: 0;
+        }
+        .speed-control{
+            display: inline-block;
+            height: auto;
+            position: absolute;
+            z-index: 99999;
+            right: 0;
+        }
+        .speed-control .increase,
+        .speed-control .reduce{
+            display: inline-block;
+            width: 80px;
+            float: left;
+            height: 80px;
+            position: relative;
+            top: 0;
+        }
+        .speed-control .reduce{
+            margin-left: 10px;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 768px) and (orientation: landscape) {
+            html {
+                transform: rotate(-90deg);
+                transform-origin: left top;
+                width: 100vh;
+                overflow-x: hidden;
+                position: absolute;
+                top: 100%;
+                left: 0;
+            }
+        }
 
         .gradient { content: ""; height: 100%; width: 100%; position: fixed; z-index: -6; }
         .gradient.one { background-image: linear-gradient(to bottom, #CFEDEF 0%, #E2EED4 50%, #ECE0B7 100% );}
@@ -34,12 +73,16 @@
         }
 
     </style>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jquery-ui.js"></script>
     <script type="text/javascript" src="jquery.ui.touch-punch.min.js"></script>
 </head>
 <body>
-
+<div class="reload-control"></div>
+<div class="speed-control">
+    <div class="reduce">&nbsp</div>
+    <div class="increase">&nbsp</div>
+</div>
 <div class="gradient one"></div>
 <div class="gradient two"></div>
 <div class="gradient three"></div>
@@ -50,58 +93,7 @@
     <div class="two"></div>
 </div>
 
-<script>
-    $( function() {
-        $( ".sun" ).draggable({
-            drag: function( event, ui ) {
-                let windowH = $(window).height();
-                let intensity = parseInt((ui.position.top/windowH)*100);
-                console.log(intensity);
-                $('.sun .two').css({'opacity': intensity/100})
-                $('.gradient.five').css({'opacity': intensity/100})
-            },
-            start: function( event, ui ) {
-                clearInterval(timer);
-                timer = null;
-                let windowH = $(window).height();
-                let intensity = parseInt((ui.position.top/windowH)*100);
-                $('.sun .two').css({'opacity': intensity/100})
-                $('.gradient.five').css({'opacity': intensity/100})
-            },
-            stop: function( event, ui ) {
-                clearInterval(timer);
-                timer = null;
-                timerloop(ui.position.top)
-            }
-        });
-        timerloop()
-
-    } );
-
-    let timer = null;
-
-
-    function timerloop(point) {
-        let pos = (point)?point:0;
-        timer = setInterval(function () {
-            $('.sun').css({'top': pos})
-            let windowH = $(window).height();
-            let intensity = parseInt((pos/windowH)*100) + 10;
-            console.log(intensity/100)
-
-            $('.sun .two').css({'opacity': intensity/100})
-
-            $('.gradient.five').css({'opacity': intensity/100})
-            pos = pos + 1;
-            if(pos >= $(window).height()-100){
-                clearInterval(timer);
-                timer = null;
-                timerloop()
-            }
-        }, 10);
-    }
-
-</script>
+<script src="main.js" type="text/javascript"></script>
 
 </body>
 </html>
