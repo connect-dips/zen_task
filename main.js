@@ -1,11 +1,11 @@
-let timeout = 100;
+let timeout = 50;
 let step = 1;
 $( function() {
 
     $('.reload-control').on('click', function () {
         location.reload();
     })
-    $('.increase').on('click', function () {
+    /*$('.increase').on('click', function () {
         step++;
     })
     $('.reduce').on('click', function () {
@@ -13,7 +13,7 @@ $( function() {
         if(step > 1){
             step--;
         }
-    })
+    })*/
 
     $( ".sun" ).draggable({
         containment: "document",

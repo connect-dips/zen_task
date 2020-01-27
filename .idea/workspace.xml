@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="424c298b-1469-45d0-96ad-a7bc9f4363b1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home1.html" beforeDir="false" afterPath="$PROJECT_DIR$/home1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home10.html" beforeDir="false" afterPath="$PROJECT_DIR$/home10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home11.html" beforeDir="false" afterPath="$PROJECT_DIR$/home11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home12.html" beforeDir="false" afterPath="$PROJECT_DIR$/home12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home2.html" beforeDir="false" afterPath="$PROJECT_DIR$/home2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home3.html" beforeDir="false" afterPath="$PROJECT_DIR$/home3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home4.html" beforeDir="false" afterPath="$PROJECT_DIR$/home4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home5.html" beforeDir="false" afterPath="$PROJECT_DIR$/home5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home6.html" beforeDir="false" afterPath="$PROJECT_DIR$/home6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home7.html" beforeDir="false" afterPath="$PROJECT_DIR$/home7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home8.html" beforeDir="false" afterPath="$PROJECT_DIR$/home8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home9.html" beforeDir="false" afterPath="$PROJECT_DIR$/home9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +42,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.home12.html">
+  <component name="RunManager" selected="JavaScript Debug.home1.html">
     <configuration name="home10.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/zen_task/home10.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -64,7 +52,7 @@
     <configuration name="home12.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/zen_task/home12.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="home8.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/zen_task/home8.html" useBuiltInWebServerPort="true">
+    <configuration name="home1.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/zen_task/home1.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="home9.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/zen_task/home9.html" useBuiltInWebServerPort="true">
@@ -72,11 +60,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.home1.html" />
         <item itemvalue="JavaScript Debug.home12.html" />
         <item itemvalue="JavaScript Debug.home11.html" />
         <item itemvalue="JavaScript Debug.home10.html" />
         <item itemvalue="JavaScript Debug.home9.html" />
-        <item itemvalue="JavaScript Debug.home8.html" />
       </list>
     </recent_temporary>
   </component>
@@ -108,7 +96,7 @@
       <workItem from="1569920497327" duration="3442000" />
       <workItem from="1577249449511" duration="5613000" />
       <workItem from="1579369769197" duration="7744000" />
-      <workItem from="1580024744492" duration="10421000" />
+      <workItem from="1580024744492" duration="10845000" />
     </task>
     <servers />
   </component>
