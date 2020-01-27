@@ -20,7 +20,6 @@ $( function() {
         drag: function( event, ui ) {
             let windowH = $(window).height();
             let intensity = parseInt((ui.position.top/windowH)*100);
-            console.log(intensity);
             $('.sun .two').css({'opacity': intensity/100})
             $('.gradient.five').css({'opacity': intensity/100})
         },
@@ -35,12 +34,14 @@ $( function() {
         stop: function( event, ui ) {
             clearInterval(timer);
             timer = null;
-            timerloop(ui.position.top)
+            let pos = (ui.position.top)? ui.position.top : 0;
+            timerloop(pos)
         }
     });
     timerloop()
 
 } );
+
 let timer = null;
 
 function timerloop(point) {
@@ -51,6 +52,7 @@ function timerloop(point) {
         let intensity = parseInt((pos/windowH)*100) + 10;
         $('.sun .two').css({'opacity': intensity/100})
         $('.gradient.five').css({'opacity': intensity/100})
+
         pos = pos + step;
 
         if(pos >= $(window).height()-100){
