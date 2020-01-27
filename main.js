@@ -1,4 +1,4 @@
-let timeout = 50;
+let timeout = 90;
 let step = 1;
 $( function() {
 
